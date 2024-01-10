@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "f85ed1bc-05d3-4321-85d7-926c562ab3d1",
+		"name": "MultiTenant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "78642"
+	},
+	"item": [
+		{
+			"name": "CreateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test\",\r\n  \"description\": \"Test\",\r\n  \"quantity\": 250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/One/product",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"One",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjBjODk3NGI5LWZiNjQtNGU0OC05MDdmLTZiZGY0ODlmY2YzMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvZXhwaXJhdGlvbiI6IjkwMDAwMDAwMDAiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJpc2FjQG9uZS5jb20iLCJleHAiOjE3MDQ5MDc4NDMsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3QiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0In0.GMy87R2fQEt4Qglz1_Pg3PSPDUTPDKLQT2HIeJRMRJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/One/product",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"One",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\": \"5f2edf8b-691f-4342-be93-257ca4dbceae\",\r\n  \"name\": \"Arregla\",\r\n  \"description\": \"Test\",\r\n  \"quantity\": 250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/One/product",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"One",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/One/product/8f486350-7880-440d-aaf7-b99df555bd50",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"One",
+						"product",
+						"8f486350-7880-440d-aaf7-b99df555bd50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"isac@one.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/auth/login",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"isac@one.com\",\r\n  \"password\": \"123456\",\r\n  \"organizationId\": \"ba3bef5e-5250-4f49-8719-ebdb0bf2b58f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/auth/sign-up",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Url",
+			"value": "http://localhost:5025/api",
+			"type": "string"
+		}
+	]
+}
